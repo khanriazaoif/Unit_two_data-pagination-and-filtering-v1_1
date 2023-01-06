@@ -88,7 +88,7 @@ function addPagination(list){
     // console.log(ul);
     ul.innerHTML = '';
 
-    function createButtonFunc() {
+    // function createButtonFunc() {
         for (let i = 0; i < list.length / 9; i++) {
             const li = document.createElement('li');
             const createButton = document.createElement('button');
@@ -97,8 +97,8 @@ function addPagination(list){
             ul.appendChild(li);
             li.appendChild(createButton);
             createButton.innerText = [i + 1];
-        }
-        createButtonFunc();   // console.log(ul);
+        // }
+        // createButtonFunc();   // console.log(ul);
 
         //
         // let pageNumber = createButton.textContent;
@@ -113,25 +113,25 @@ function addPagination(list){
 
         selectFirstPaginationButton();
 
-        const buttonSelect = document.querySelectorAll('button');
-        // console.log(buttonSelect);
-        for (let i = 0; i < buttonSelect.length; i++) {
-            buttonSelect[i].addEventListener('click', (e) => {
-                console.log('event listener works');
-
-                //found the below solution here: https://stackoverflow.com/questions/38990163/how-can-i-add-and-remove-an-active-class-to-an-element-in-pure-javascript
-                function removeActiveClass(e) {
-                    let activeClass = document.querySelectorAll('.active');
-                    [].forEach.call(activeClass, function (el) {
-                        el.classList.remove('active');
-                    });
-                    e.target.className = 'active';
-                }
-
-                //above function is part of the solution I googled.
-                removeActiveClass(e);
-            });
-        }
+        // const buttonSelect = document.querySelectorAll('button');
+        // // console.log(buttonSelect);
+        // for (let i = 0; i < buttonSelect.length; i++) {
+        //     buttonSelect[i].addEventListener('click', (e) => {
+        //         console.log('event listener works');
+        //
+        //         //found the below solution here: https://stackoverflow.com/questions/38990163/how-can-i-add-and-remove-an-active-class-to-an-element-in-pure-javascript
+        //         function removeActiveClass(e) {
+        //             let activeClass = document.querySelectorAll('.active');
+        //             [].forEach.call(activeClass, function (el) {
+        //                 el.classList.remove('active');
+        //             });
+        //             e.target.className = 'active';
+        //         }
+        //
+        //         //above function is part of the solution I googled.
+        //         removeActiveClass(e);
+        //     });
+        // }
     }
 };
 
