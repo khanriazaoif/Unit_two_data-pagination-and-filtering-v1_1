@@ -18,7 +18,6 @@ Create the `showPage` function
 This function will create and insert/append the elements needed to display a "page" of nine students
 */
 
-
 function showPage( list, page) {
     let startIndex = (page * 9) - 9;
     let endIndex = (page * 9);
@@ -74,7 +73,11 @@ function showPage( list, page) {
             // console.log('No');
         }
     }
+
 };
+
+
+
 
 /*
 Create the `addPagination` function
@@ -82,10 +85,7 @@ This function will create and insert/append the elements needed for the paginati
 */
 function addPagination(list){
     let valueOfPaginationButton = list.length;
-    // const button = document.querySelectorAll('button');
-    // console.log(button);
     const ul = document.querySelector('.link-list');
-    // console.log(ul);
     ul.innerHTML = '';
 
     // function createButtonFunc() {
@@ -97,16 +97,18 @@ function addPagination(list){
             ul.appendChild(li);
             li.appendChild(createButton);
             createButton.innerText = [i + 1];
-        }
-        // createButtonFunc();   // console.log(ul);
+            let pageNumbers = createButton.textContent;
+            // console.log(pageNumbers)
+            // return pageNumbers;
 
-        //
-        // let pageNumber = createButton.textContent;
-        // console.log(pageNumber);
+        }
+    // }
+
+
 
         function selectFirstPaginationButton() {
             const firstLiButton = document.querySelector('button');
-            console.log(firstLiButton);
+            // console.log(firstLiButton);
             firstLiButton.className = 'active';
             return;
         }
@@ -114,7 +116,11 @@ function addPagination(list){
         selectFirstPaginationButton();
 
         const buttonSelect = document.querySelectorAll('button');
-        console.log(ul);
+        for (let i = 0; i< buttonSelect.length; i++){
+        let buttonText = buttonSelect[i].textContent;
+        // buttonSelect.textContent;
+        // console.log(buttonText);
+
 
             ul.addEventListener('click', (e) => {
             //     console.log('event listener works');
@@ -126,18 +132,30 @@ function addPagination(list){
                         el.classList.remove('active');
                     });
                     e.target.className = 'active';
+                    // console.log(e);
                 }
+
 
                 // above function is part of the solution I googled.
                 removeActiveClass(e);
+                // let pageNumber = buttonSelect[i].textContent;
+                // select the active class innerText
+                let activeClassInnerText = document.querySelector('.active');
+                let pageNumber = activeClassInnerText.innerHTML
+
+                console.log(pageNumber);
+                return pageNumber;
             });
-        // }
+            console.log(ul);
+
+            showPage(data,2);
+        }
 
 };
 
 
 
-showPage( data,2);
+
 addPagination(data);
 
 // Call functions
