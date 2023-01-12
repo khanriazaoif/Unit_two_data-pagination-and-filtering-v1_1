@@ -129,8 +129,10 @@ function addPagination(list){
         }
     ul.addEventListener('click', (e) => {
         //     console.log('event listener works');
-
-        //found the below solution here: https://stackoverflow.com/questions/38990163/how-can-i-add-and-remove-an-active-class-to-an-element-in-pure-javascript
+        const button = document.querySelector('button').type;
+        console.log(button);
+if (e.target === button){
+        //googled help with below: https://stackoverflow.com/questions/38990163/how-can-i-add-and-remove-an-active-class-to-an-element-in-pure-javascript
         function removeActiveClass(e) {
             let activeClass = document.querySelectorAll('.active');
             [].forEach.call(activeClass, function (el) {
@@ -139,10 +141,11 @@ function addPagination(list){
             e.target.className = 'active';
             // console.log(e);
         }
-
+    removeActiveClass(e);
+}
 
         // above function is part of the solution I googled.
-        removeActiveClass(e);
+
         // let pageNumber = buttonSelect[i].textContent;
         // select the active class innerText
         let activeClassInnerText = document.querySelector('.active');
