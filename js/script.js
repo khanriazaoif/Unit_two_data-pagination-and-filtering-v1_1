@@ -122,34 +122,36 @@ function addPagination(list){
         // console.log(buttonText);
 
 
-            ul.addEventListener('click', (e) => {
-            //     console.log('event listener works');
-
-                //found the below solution here: https://stackoverflow.com/questions/38990163/how-can-i-add-and-remove-an-active-class-to-an-element-in-pure-javascript
-                function removeActiveClass(e) {
-                    let activeClass = document.querySelectorAll('.active');
-                    [].forEach.call(activeClass, function (el) {
-                        el.classList.remove('active');
-                    });
-                    e.target.className = 'active';
-                    // console.log(e);
-                }
 
 
-                // above function is part of the solution I googled.
-                removeActiveClass(e);
-                // let pageNumber = buttonSelect[i].textContent;
-                // select the active class innerText
-                let activeClassInnerText = document.querySelector('.active');
-                let pageNumber = activeClassInnerText.innerHTML
-
-                console.log(pageNumber);
-                return pageNumber;
-            });
-            console.log(ul);
 
             showPage(data,2);
         }
+    ul.addEventListener('click', (e) => {
+        //     console.log('event listener works');
+
+        //found the below solution here: https://stackoverflow.com/questions/38990163/how-can-i-add-and-remove-an-active-class-to-an-element-in-pure-javascript
+        function removeActiveClass(e) {
+            let activeClass = document.querySelectorAll('.active');
+            [].forEach.call(activeClass, function (el) {
+                el.classList.remove('active');
+            });
+            e.target.className = 'active';
+            // console.log(e);
+        }
+
+
+        // above function is part of the solution I googled.
+        removeActiveClass(e);
+        // let pageNumber = buttonSelect[i].textContent;
+        // select the active class innerText
+        let activeClassInnerText = document.querySelector('.active');
+        let pageNumber = activeClassInnerText.innerHTML
+
+        console.log(pageNumber);
+        return pageNumber;
+    });
+    // console.log(ul);
 
 };
 
