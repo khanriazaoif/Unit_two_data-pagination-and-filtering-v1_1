@@ -127,7 +127,7 @@ function addPagination(list){
 
 
         }
-    const page = ul.addEventListener('click', (e) => {
+    ul.addEventListener('click', (e) => {
         //     console.log('event listener works');
 
         //found the below solution here: https://stackoverflow.com/questions/38990163/how-can-i-add-and-remove-an-active-class-to-an-element-in-pure-javascript
@@ -149,15 +149,16 @@ function addPagination(list){
         let pageNumber = activeClassInnerText.innerHTML
 
         console.log(pageNumber);
-        return pageNumber;
+        showPage(data,  pageNumber);
     });
-    console.log(page);
-    showPage(data,2);
+
 };
 
 
 
 
-addPagination(data);
 
 // Call functions
+
+addPagination(data);
+showPage(data,1);
