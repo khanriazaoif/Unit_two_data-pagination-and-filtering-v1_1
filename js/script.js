@@ -87,8 +87,6 @@ function addPagination(list){
     let valueOfPaginationButton = list.length;
     const ul = document.querySelector('.link-list');
     ul.innerHTML = '';
-
-    // function createButtonFunc() {
         for (let i = 0; i < list.length / 9; i++) {
             const li = document.createElement('li');
             const createButton = document.createElement('button');
@@ -98,17 +96,10 @@ function addPagination(list){
             li.appendChild(createButton);
             createButton.innerText = [i + 1];
             let pageNumbers = createButton.textContent;
-            // console.log(pageNumbers)
-            // return pageNumbers;
-
         }
-    // }
-
-
 
         function selectFirstPaginationButton() {
             const firstLiButton = document.querySelector('button');
-            // console.log(firstLiButton);
             firstLiButton.className = 'active';
             return;
         }
@@ -118,18 +109,11 @@ function addPagination(list){
         const buttonSelect = document.querySelectorAll('button');
         for (let i = 0; i< buttonSelect.length; i++){
         let buttonText = buttonSelect[i].textContent;
-        // buttonSelect.textContent;
-        // console.log(buttonText);
-
-
-
-
-
 
         }
     ul.addEventListener('click', (e) => {
-        //     console.log('event listener works');
-if (e.target.tagName === 'BUTTON'){
+
+    if (e.target.tagName === 'BUTTON'){
         //googled help with below: https://stackoverflow.com/questions/38990163/how-can-i-add-and-remove-an-active-class-to-an-element-in-pure-javascript
         function removeActiveClass(e) {
             let activeClass = document.querySelectorAll('.active');
@@ -137,15 +121,10 @@ if (e.target.tagName === 'BUTTON'){
                 el.classList.remove('active');
             });
             e.target.className = 'active';
-            // console.log(e);
         }
     removeActiveClass(e);
 }
 
-        // above function is part of the solution I googled.
-
-        // let pageNumber = buttonSelect[i].textContent;
-        // select the active class innerText
         let activeClassInnerText = document.querySelector('.active');
         let pageNumber = activeClassInnerText.innerHTML
 
