@@ -22,13 +22,11 @@ function showPage( list, page) {
     let startIndex = (page * 9) - 9;
     let endIndex = (page * 9);
     let ul = document.querySelector('.student-list');
-// console.log(ul)
     ul.innerHTML = '';
     for (let i = 0; i < list.length; i++) {
         if (i >= startIndex && i < endIndex) {
             const li = document.createElement('li');
             li.className = 'student-item cf';
-            // console.log(li);
             function createDivStudentDetails(){
                 const div = document.createElement('div');
                 div.className = 'student-details';
@@ -39,7 +37,6 @@ function showPage( list, page) {
                 img.alt = 'Profile Picture';
                 const h3 = document.createElement('h3');
                 const span = document.createElement('span');
-                // span.className = data[i].registered.date;
                 span.className = "email";
 
                 ul.appendChild(li);
@@ -49,7 +46,6 @@ function showPage( list, page) {
                 h3.innerText = data[i].name.first;
                 h3.insertAdjacentElement("afterend", span);
                 span.innerText = data[i].email;
-                // console.log(li);
                 return;
             }
 
@@ -62,15 +58,10 @@ function showPage( list, page) {
 
                 li.appendChild(div);
                 div.appendChild(span);
-
-                // console.log(ul);
             }
 
             createDivStudentDetails();
             createDivJoinedDetails();
-            // console.log('Yes');
-        } else {
-            // console.log('No');
         }
     }
 
@@ -127,8 +118,6 @@ function addPagination(list){
 
         let activeClassInnerText = document.querySelector('.active');
         let pageNumber = activeClassInnerText.innerHTML
-
-        console.log(pageNumber);
         showPage(data,  pageNumber);
     });
 
