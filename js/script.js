@@ -123,7 +123,35 @@ function addPagination(list){
 
 };
 
+function searchComponent (){
+    const label = document.createElement('label');
+    label.setAttribute("for", "search");
+    label.className = 'student-search';
+    console.log(label);
 
+    const span = document.createElement('span');
+    span.innerText = 'Search by name';
+    console.log(span);
+
+    const input = document.createElement('input');
+    input.setAttribute('id', 'search');
+    input.setAttribute('placeholder', 'Search by name ....');
+    console.log(input);
+
+    const button = document.createElement('button');
+    button.type = 'button';
+
+    const img = document.createElement('img');
+    img.setAttribute('src', 'img/icn-search.svg');
+    img.setAttribute('alt', 'Search icon');
+    console.log(img);
+
+
+
+}
+
+
+searchComponent();
 
 
 
