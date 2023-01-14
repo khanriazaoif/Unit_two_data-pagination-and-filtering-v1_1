@@ -131,12 +131,12 @@ function searchComponent (){
 
     const span = document.createElement('span');
     span.innerText = 'Search by name';
-    console.log(span);
+    // console.log(span);
 
     const input = document.createElement('input');
     input.setAttribute('id', 'search');
     input.setAttribute('placeholder', 'Search by name ....');
-    console.log(input);
+    // console.log(input);
 
     const button = document.createElement('button');
     button.type = 'button';
@@ -144,9 +144,12 @@ function searchComponent (){
     const img = document.createElement('img');
     img.setAttribute('src', 'img/icn-search.svg');
     img.setAttribute('alt', 'Search icon');
-    console.log(img);
+    // console.log(img);
 
-
+    label.appendChild(span);
+    span.insertAdjacentElement('afterend', input);
+    input.insertAdjacentElement('afterend', button);
+    button.appendChild(img);
 
 }
 
