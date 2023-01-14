@@ -146,6 +146,9 @@ function searchComponent (){
     img.setAttribute('alt', 'Search icon');
     // console.log(img);
 
+    const headers = document.querySelector('header');
+
+    headers.appendChild(label);
     label.appendChild(span);
     span.insertAdjacentElement('afterend', input);
     input.insertAdjacentElement('afterend', button);
