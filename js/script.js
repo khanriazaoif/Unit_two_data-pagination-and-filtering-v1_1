@@ -178,18 +178,6 @@ function searchComponent (){
         }
     }
 
-
-
-    // submit.addEventListener('click', (event) => {
-    //     event.preventDefault();
-    //
-    //     // Invoke your search function here - Arguments: search, tableCells
-    //     performSearch(search, tableCells);
-    //
-    //     // Helpful log statement to test function
-    //     console.log('Submit button is functional!');
-    // });
-
     /* submit listener */
     search.addEventListener('keyup', () => {
 
