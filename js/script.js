@@ -162,13 +162,15 @@ function searchComponent (){
     // const search = document.querySelector('button');
 
     function performSearch(searchInput, names) {
-        console.log('YES');
+        console.log(names);
         for (let i = 0; i < names.length; i++){
             // 1c. Remove the 'match' class name from each `names[i]`
+            // console.log(names[i]);
             names[i].classList.remove('match');
             // 1d. Create a conditional that checks two conditions:
             // 1ca. If the `searchInput.value.length` does not equal the digit zero AND `names[i].textContent.toLowerCase()` includes `searchInput.value.toLowerCase())`
             if (searchInput.value.length !== 0 && names[i].textContent.toLowerCase().includes(searchInput.value.toLowerCase())){
+
                 console.log('yes');
             } else {
                 console.log('no');
@@ -178,19 +180,31 @@ function searchComponent (){
 
 
 
-    search.addEventListener('click', (event) => {
-        event.preventDefault();
+    // submit.addEventListener('click', (event) => {
+    //     event.preventDefault();
+    //
+    //     // Invoke your search function here - Arguments: search, tableCells
+    //     performSearch(search, tableCells);
+    //
+    //     // Helpful log statement to test function
+    //     console.log('Submit button is functional!');
+    // });
+
+    /* submit listener */
+    search.addEventListener('keyup', () => {
 
         // Invoke your search function here - Arguments: search, tableCells
         performSearch(search, tableCells);
 
         // Helpful log statement to test function
-        console.log('Submit button is functional!');
+        console.log('Keyup event on the Search input is functional!');
     });
+
 }
 
 
-searchComponent();
+
+
 
 
 
@@ -198,3 +212,4 @@ searchComponent();
 
 addPagination(data);
 showPage(data,1);
+searchComponent();
