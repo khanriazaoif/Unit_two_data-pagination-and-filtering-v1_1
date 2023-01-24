@@ -178,7 +178,7 @@ function searchComponent (){
                 // console.log(filter);
                 const ul = document.querySelector('.student-list');
                 console.log(ul);
-                const li = document.querySelectorAll('.student-item cf');
+                const li = document.querySelectorAll('.student-item.cf');
                 console.log(li);
                 for (let i = 0; i < li.length; i++) {
                     // var a, i, txtValue;
