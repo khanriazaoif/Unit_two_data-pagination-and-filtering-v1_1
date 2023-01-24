@@ -158,11 +158,15 @@ function searchComponent (){
     const tableCells = document.querySelectorAll('.searchID');
     console.log(tableCells);
     const search = document.querySelector('#search');
+
+
+
     // console.log(search);
     // const search = document.querySelector('button');
 
     function performSearch(searchInput, names) {
-        console.log(names);
+        // console.log(names);
+
         for (let i = 0; i < names.length; i++){
             // 1c. Remove the 'match' class name from each `names[i]`
             // console.log(names[i]);
@@ -170,7 +174,25 @@ function searchComponent (){
             // 1d. Create a conditional that checks two conditions:
             // 1ca. If the `searchInput.value.length` does not equal the digit zero AND `names[i].textContent.toLowerCase()` includes `searchInput.value.toLowerCase())`
             if (searchInput.value.length !== 0 && names[i].textContent.toLowerCase().includes(searchInput.value.toLowerCase())){
-
+                const filter = input.value.toUpperCase();
+                // console.log(filter);
+                const ul = document.querySelector('.student-list');
+                console.log(ul);
+                const li = document.querySelectorAll('.student-item cf');
+                console.log(li);
+                for (let i = 0; i < li.length; i++) {
+                    // var a, i, txtValue;
+                    let a = li[i].querySelectorAll('.searchID')[0];
+                    console.log(a);
+                    let txtValue = a.textContent || a.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        li[i].style.display = '';
+                        console.log('YES THE NEW THING WORKS');
+                    } else {
+                        li[i].style.display = 'none';
+                        console.log('NO THE NEW ONE DONT WORK');
+                    }
+                }
                 console.log('yes');
             } else {
                 console.log('no');
