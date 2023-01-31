@@ -18,19 +18,6 @@ Create the `showPage` function
 This function will create and insert/append the elements needed to display a "page" of nine students
 */
 
-function allNames(list) {
-    let ul = document.querySelector('.student-list');
-    ul.innerHTML = '';
-    const li = document.createElement('li');
-    li.className = 'student-item cf';
-    ul.appendChild(li);
-    console.log(ul);
-    return;
-}
-
-console.log(allNames());
-allNames(data);
-
 function showPage( list, page) {
     let startIndex = (page * 9) - 9;
     let endIndex = (page * 9);
@@ -141,16 +128,13 @@ function searchComponent (){
     const label = document.createElement('label');
     label.setAttribute("for", "search");
     label.className = 'student-search';
-    // console.log(label);
 
     const span = document.createElement('span');
     span.innerText = 'Search by name';
-    // console.log(span);
 
     const input = document.createElement('input');
     input.setAttribute('id', 'search');
     input.setAttribute('placeholder', 'Search by name ....');
-    // console.log(input);
 
     const button = document.createElement('button');
     button.type = 'button';
@@ -158,7 +142,6 @@ function searchComponent (){
     const img = document.createElement('img');
     img.setAttribute('src', 'img/icn-search.svg');
     img.setAttribute('alt', 'Search icon');
-    // console.log(img);
 
     const headers = document.querySelector('header');
 
@@ -173,28 +156,16 @@ function searchComponent (){
     const search = document.querySelector('#search');
 
 
-
-    // console.log(search);
-    // const search = document.querySelector('button');
-
     function performSearch(searchInput, names) {
-        // console.log(names);
-
         for (let i = 0; i < names.length; i++){
-            // 1c. Remove the 'match' class name from each `names[i]`
-            // console.log(names[i]);
             names[i].classList.remove('match');
-            // 1d. Create a conditional that checks two conditions:
-            // 1ca. If the `searchInput.value.length` does not equal the digit zero AND `names[i].textContent.toLowerCase()` includes `searchInput.value.toLowerCase())`
             if (searchInput.value.length !== 0 && names[i].textContent.toLowerCase().includes(searchInput.value.toLowerCase())){
                 const filter = input.value.toUpperCase();
-                // console.log(filter);
                 const ul = document.querySelector('.student-list');
                 console.log(ul);
                 const li = document.querySelectorAll('.student-item.cf');
                 console.log(li);
                 for (let i = 0; i < li.length; i++) {
-                    // var a, i, txtValue;
                     let a = li[i].querySelectorAll('.searchID')[0];
                     console.log(a);
                     let txtValue = a.textContent || a.innerText;
