@@ -18,6 +18,19 @@ Create the `showPage` function
 This function will create and insert/append the elements needed to display a "page" of nine students
 */
 
+function allNames(list) {
+    let ul = document.querySelector('.student-list');
+    ul.innerHTML = '';
+    const li = document.createElement('li');
+    li.className = 'student-item cf';
+    ul.appendChild(li);
+    console.log(ul);
+    return;
+}
+
+console.log(allNames());
+allNames(data);
+
 function showPage( list, page) {
     let startIndex = (page * 9) - 9;
     let endIndex = (page * 9);
@@ -44,7 +57,7 @@ function showPage( list, page) {
                 li.appendChild(div);
                 div.appendChild(img);
                 img.insertAdjacentElement("afterend", h3);
-                h3.innerText = data[i].name.first;
+                h3.innerText = `${data[i].name.first} ${data[i].name.last}`;
                 h3.insertAdjacentElement("afterend", span);
                 span.innerText = data[i].email;
                 return;
@@ -55,7 +68,7 @@ function showPage( list, page) {
                 div.className = 'joined-details';
                 const span = document.createElement('span');
                 span.className = 'date';
-                span.innerText = data[i].registered.date;
+                span.innerText = `Joined ${data[i].registered.date}`;
 
                 li.appendChild(div);
                 div.appendChild(span);
